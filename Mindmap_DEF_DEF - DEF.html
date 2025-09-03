@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mapa Mental - Taxonomía ESMAS-ES+</title>
+<style>
+        :root {
+            --bg-color: #f0f4f8;
+            --main-node-color: #4a698a;
+            --branch-color-1: #87ceeb;
+            --branch-color-2: #98fb98;
+            --branch-color-3: #f08080;
+            --branch-color-4: #f4a460;
+            --branch-color-5: #dda0dd;
+            --branch-color-6: #40e0d0;
+            --text-color: #34495e;
+            --hover-bg: #e8f0f8;
+            --shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 2em;
+        }
+
+        .mindmap-container {
+            padding: 2em;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--main-node-color);
+            border-bottom: 3px solid var(--main-node-color);
+            padding-bottom: 0.5em;
+            margin-bottom: 1.5em;
+            font-size: 2.5em;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            position: relative;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        li:before {
+            content: '•';
+            color: var(--branch-color-1);
+            font-weight: bold;
+            font-size: 1.2em;
+            position: absolute;
+            left: 0;
+            top: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .node {
+            display: block;
+            font-weight: bold;
+            font-size: 1.1em;
+            cursor: pointer;
+            padding: 8px 12px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            transition: background-color 0.3s, transform 0.3s;
+            user-select: none;
+        }
+
+        .node:hover {
+            background-color: var(--hover-bg);
+            transform: translateY(-2px);
+        }
+
+        .node.level-0 {
+            background-color: var(--main-node-color);
+            color: #fff;
+            font-size: 1.5em;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+            padding: 15px;
+            margin-top: 1em;
+            margin-bottom: 1em;
+        }
+
+        .node.level-1 { background-color: var(--branch-color-1); color: var(--text-color); }
+        .node.level-2 { background-color: var(--branch-color-2); color: var(--text-color); }
+        .node.level-3 { background-color: var(--branch-color-3); color: var(--text-color); }
+        .node.level-4 { background-color: var(--branch-color-4); color: var(--text-color); }
+        .node.level-5 { background-color: var(--branch-color-5); color: var(--text-color); }
+        .node.level-6 { background-color: var(--branch-color-6); color: var(--text-color); }
+
+        .branch, .example-list {
+            display: none;
+            padding-left: 1.5em;
+            margin-top: 0.5em;
+            border-left: 2px solid #ccc;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        .branch.active, .example-list.active {
+            display: block;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        .example-list {
+            font-size: 0.9em;
+            color: #555;
+            margin-top: 0.5em;
+            padding-left: 15px;
+            border-left: 1px dashed #ccc;
+        }
+    </style>
+</head>
+<body>
+<div class="mindmap-container">
+<h1 class="node level-0">Taxonomía 2.0. ESMAS-ES+</h1><div style="width: 60%; margin: 20px auto; text-align: justify;"><details style="padding: 10px; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);"><summary>Descripción</summary><p>Taxonomía 2.0 -ESMAS-ES+ propone una visualización interactiva de categorías y rutas para la descripción ontológica de unidades nominales. Utilizando una estructura de nodos interconectados, muestra de forma clara y concisa las relaciones inherentes entre conceptos y categorías. Proporciona una aproximación sistemática que mejora la comprensión  y la toma de decisiones para la anotación semántico-jerárquica.</p></details></div>
+
+
+
+<ul id="mindmap-root">
+<li data-toggle="true">
+<span class="node level-1">Animado</span>
+<ul class="branch">
+<li data-toggle="true">
+<span class="node level-2">Humano</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-3">Condición y relación</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-4">General</span>
+<ul class="example-list"><li>niños, padre</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Origen</span>
+<ul class="example-list"><li>europeo, china</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Familia</span>
+<ul class="example-list"><li>madre, abuela</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Apellidos</span>
+<ul class="example-list"><li>Hernández, Rodríguez</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Nombre propio</span>
+<ul class="example-list"><li>Luisa, Daniel</li></ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Personaje histórico</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-4">Nombre propio</span>
+<ul class="example-list"><li>Cleopatra, César</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Apellidos</span>
+<ul class="example-list"><li>Hernández, Domínguez</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Título</span>
+<ul class="example-list"><li>graduado, doctor</li></ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Condición humana</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-4">Negativa</span>
+<ul class="example-list"><li>enferma, enemigo</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Positiva</span>
+<ul class="example-list"><li>amiga, compañero</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Desplazamiento</span>
+<ul class="example-list"><li>emigrante, nómada</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Medicina</span>
+<ul class="example-list"><li>paciente, convaleciente</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Educación</span>
+<ul class="example-list"><li>estudiante, profesora</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Habitante</span>
+<ul class="example-list"><li>inquilina, vecino</li></ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Agente o actor</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-4">General</span>
+<ul class="example-list"><li>manifestante, filántropo</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Acto positivo</span>
+<ul class="example-list"><li>inventor, donante</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Acto negativo</span>
+<ul class="example-list"><li>bandido, asesina</li></ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Actividad</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-4">Cargo</span>
+<ul class="example-list"><li>decana, alcalde</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Profesión</span>
+<ul class="example-list"><li>fontanero, electricista</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Educación</span>
+<ul class="example-list"><li>profesora, docente</li></ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Pensamiento y creencia</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-4">Creencia religiosa</span>
+<ul class="example-list"><li>catolicismo, taoísmo</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Ideología política</span>
+<ul class="example-list"><li>socialista, centrista</li></ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Organizaciones y grupos</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-4">Asociación tiempo libre</span>
+<ul class="example-list"><li>club, peña</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Organización</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-5">General</span>
+<ul class="example-list"><li>Cruz Roja, UNESCO</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-5">Política</span>
+<ul class="example-list"><li>ONU, Unión Europea</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-5">Educativa</span>
+<ul class="example-list"><li>Universidad, colegio</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-5">Militar</span>
+<ul class="example-list"><li>ejército, milicias</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-5">Empresarial</span>
+<ul class="example-list"><li>editorial, conservera</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-5">Cadena</span>
+<ul class="example-list"><li>RTVE, Antena 3</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-5">Gubernamental</span>
+<ul class="example-list"><li>parlamento, gobierno</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-5">Médica</span>
+<ul class="example-list"><li>hospital, clínica</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-5">Virtual</span>
+<ul class="example-list"><li>Facebook, Instagram</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-5">País</span>
+<ul class="example-list"><li>España, Portugal</li></ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Grupo o colectivo</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-5">General</span>
+<ul class="example-list"><li>equipo, quinteto</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-5">Militar</span>
+<ul class="example-list"><li>infanteria, caballería</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-5">Grupo</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-6">Reunión</span>
+<ul class="example-list"><li>coloquio, foro</li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true">
+<span class="node level-2">Criaturas de Ficción</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-3">General</span>
+<ul class="example-list"><li>hadas, monstruo</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Nombre</span>
+<ul class="example-list"><li>Mickey Mouse, Afrodita</li></ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true"><span class="node level-2">Animal</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-3">General</span>
+<ul class="example-list"><li>perra, gato</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Mamífero</span>
+<ul class="example-list"><li>leona, tigre</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Ave</span>
+<ul class="example-list"><li>águila, loro</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Pez</span>
+<ul class="example-list"><li>tiburón, sardina</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Reptil</span>
+<ul class="example-list"><li>serpiente, cocodrilo</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Insecto</span>
+<ul class="example-list"><li>mosca, libélula</li></ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true"><span class="node level-2">Vegetal</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-3">Planta</span>
+<ul class="example-list"><li>flor, árbol</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Árbol</span>
+<ul class="example-list"><li>eucalipto, pino</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Flor</span>
+<ul class="example-list"><li>rosa, margarita</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Fruta</span>
+<ul class="example-list"><li>naranja, plátano</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Hortaliza</span>
+<ul class="example-list"><li>cebolla, zanahoria</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Especies y condimentos</span>
+<ul class="example-list"><li>canela, pimienta</li></ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true"><span class="node level-2">Partes del cuerpo o ser vivo</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-3">Humano</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-4">General</span>
+<ul class="example-list"><li>cuello, pies</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Externa</span>
+<ul class="example-list"><li>cabeza, espalda</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Recubrimiento</span>
+<ul class="example-list"><li>piel, pelo</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Interna (músculos y huesos)</span>
+<ul class="example-list"><li>peroné, glúteos</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Órganos</span>
+<ul class="example-list"><li>ovarios, hígado</li></ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Animal</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-4">General</span>
+<ul class="example-list"><li>pata, garras</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Interna (músculos y huesos)</span>
+<ul class="example-list"><li>quilla, coracoides</li></ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Vegetal</span>
+<ul class="example-list"><li>tallo, tronco, raíz</li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true">
+<span class="node level-1">Material</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-2">Objeto</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-3">Categorías de productos</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-4">General</span>
+<ul class="example-list"><li>pitillo, claxon</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Madera</span>
+<ul class="example-list"><li>ébano, roble</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Minerales y metales</span>
+<ul class="example-list"><li>rubí, aluminio</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Orgánico</span>
+<ul class="example-list"><li>corcho, lino</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Piedras ornamentales</span>
+<ul class="example-list"><li>mármol, cuarzo</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Artificial</span>
+<ul class="example-list"><li>plástico, vidrio</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Cerámico</span>
+<ul class="example-list"><li>porcelana, barro</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Mobiliario</span>
+<ul class="example-list"><li>cortina, armario</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Cuidado personal (cosmética)</span>
+<ul class="example-list"><li>pintalabios, esmalte</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Ornamentación (joya)</span>
+<ul class="example-list"><li>anillo, pendientes</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Medicamento</span>
+<ul class="example-list"><li>pastilla, píldora</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Musical</span>
+<ul class="example-list"><li>piano, guitarra</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Aparato de cocina</span>
+<ul class="example-list"><li>sartén, olla</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Monetario</span>
+<ul class="example-list"><li>billete, dinero</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Tecnología</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-5">General</span>
+<ul class="example-list"><li>cámara, dron</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-5">Dispositivo</span>
+<ul class="example-list"><li>ordenador, smartphone</li></ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Superficie (parte)</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-5">Parte</span>
+<ul class="example-list"><li>base, borde</li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Gastronomía e ingesta</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-4">General</span>
+<ul class="example-list"><li>postre, entrante</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Refección</span>
+<ul class="example-list"><li>banquete, festín</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Harinas y postres</span>
+<ul class="example-list"><li>pastel, manitoba</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Animal</span>
+<li data-toggle="true"><span class="node level-5">General</span>
+<ul class="example-list"><li>churrasco, asado</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-5">Mamífero</span>
+<ul class="example-list"><li>cerdo, ternera</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-5">Ave</span>
+<ul class="example-list"><li>pollo, pavo</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-5">Acuático</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-6">General</span>
+<ul class="example-list"><li>salmón, pulpo</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-6">Pescado</span>
+<ul class="example-list"><li>trucha, sushi</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-6">Marisco</span>
+<ul class="example-list"><li>bovagante, cigalas</li></ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Planta y condimento</span>
+<ul class="example-list"><li>albahaca, pimienta</li></ul>
+</li>
+</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Construcción y urbanismo</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-4">Construcción</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-5">Parte</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-6">Material</span>
+<ul class="example-list"><li>baldosa, teja</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-6">General</span>
+<ul class="example-list"><li>ventana, verja</li></ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true"><span class="node level-5">Habitación</span>
+<ul class="example-list"><li>azotea, buhardilla</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-5">Tipo</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-6">General</span>
+<ul class="example-list"><li>catedral, rascacielos</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-6">Médico</span>
+<ul class="example-list"><li>hospital, sanatorio</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-6">Jurisprudencia</span>
+<ul class="example-list"><li>cárcel, sala de lo penal</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-6">Empresarial</span>
+<ul class="example-list"><li>periódico, editorial</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-6">Domicilio</span>
+<ul class="example-list"><li>casa, rascacielos</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-6">Educación</span>
+<ul class="example-list"><li>aula, gimnasio</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-6">Desplazamiento</span>
+<ul class="example-list"><li>albergue, parador</li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Urbanismo</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-5">Vía</span>
+<ul class="example-list"><li>carretera, calle</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-5">Canal</span>
+<ul class="example-list"><li>canal, acueducto</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-5">Puente</span>
+<ul class="example-list"><li>puente, pasarela</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-5">Mobiliario</span>
+<ul class="example-list"><li>papelera, farola</li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Vestimenta</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-4">Calzado</span>
+<ul class="example-list"><li>zapatos, botas</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Ropa</span>
+<ul class="example-list"><li>falda, kimono</li></ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Locomoción</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-4">General</span>
+<ul class="example-list"><li>tanque, avión</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Terrestre</span>
+<ul class="example-list"><li>moto, camión</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Acuático</span>
+<ul class="example-list"><li>submarino, barca</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Aéreo</span>
+<ul class="example-list"><li>cazas, bombarderos</li></ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Comunicación</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-4">General</span>
+<ul class="example-list"><li>carta, cartel</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Texto</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-5">General</span>
+<ul class="example-list"><li>volumen, borrador</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-5">Tipo textual</span>
+<ul class="example-list"><li>panfleto, manual de instrucciones</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-5">Publicado</span>
+<ul class="example-list"><li>libro, periódico</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-5">Parte</span>
+<ul class="example-list"><li>introducción, preámbulo</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-5">Documento</span>
+<ul class="example-list"><li>certificado, pasaporte</li></ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Acuerdo</span>
+<ul class="example-list"><li>contrato, convenio</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Audiovisual</span>
+<ul class="example-list"><li>pendrive, tablet</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Digital</span>
+<ul class="example-list"><li>eBook, página web</li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true"><span class="node level-2">Sustancia</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-3">General</span>
+<ul class="example-list"><li>sudor, lágrima</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Carburante</span>
+<ul class="example-list"><li>gasolina, diesel</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Medicamento</span>
+<ul class="example-list"><li>jarabe, gotas</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Excremento</span>
+<ul class="example-list"><li>caca, pis</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Secreción</span>
+<ul class="example-list"><li>sudor, pus</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Gas</span>
+<ul class="example-list"><li>dióxido de carbono, argón</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Líquido (no consumible)</span>
+<ul class="example-list"><li>lejía, detergente</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Gastronomía e ingesta</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-4">Líquido consumible</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-5">General</span>
+<ul class="example-list"><li>agua, vinagre</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-5">Bebible</span>
+<ul class="example-list"><li>agua, cerveza</li></ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Salsa o condimento</span>
+<ul class="example-list"><li>ketchup, mostaza</li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true">
+<span class="node level-1">Intelectual</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-2">General</span>
+<ul class="example-list"><li>idea, concepto, conocimiento</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-2">Contenido</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-3">General</span>
+<ul class="example-list"><li>tema, asunto</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Texto</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-4">General</span>
+<ul class="example-list"><li>texto, relato</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Publicado</span>
+<ul class="example-list"><li>volumen, edición</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Audiovisual</span>
+<ul class="example-list"><li>podcast, cortometraje</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Digital</span>
+<ul class="example-list"><li>tuit, blog</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Parte</span>
+<ul class="example-list"><li>introducción, preámbulo</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Documento</span>
+<ul class="example-list"><li>acta, estatutos</li></ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Significado</span>
+<ul class="example-list"><li>significado, sentido</li></ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true"><span class="node level-2">Comunicación</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-3">Lengua</span>
+<ul class="example-list"><li>gallego, alemán</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Enunciado (declaración y expresión)</span>
+<ul class="example-list"><li>declaración, expresión</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Acuerdo</span>
+<ul class="example-list"><li>acuerdo, contrato</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Oferta</span>
+<ul class="example-list"><li>oferta, propuesta</li></ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true"><span class="node level-2">Temática</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-3">Creencia (religiosa)</span>
+<ul class="example-list"><li>cristianismo, islamismo</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Ideología</span>
+<ul class="example-list"><li>comunismo, neoliberalismo</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Área de conocimiento</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-4">General</span>
+<ul class="example-list"><li>ética, medicina tradicional</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Ciencias naturales</span>
+<ul class="example-list"><li>biología, física</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Ciencias sociales</span>
+<ul class="example-list"><li>sociología, antropología</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Ciencias computacionales</span>
+<ul class="example-list"><li>inteligencia artificial, aprendizaje automático</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Humanidades y filosofía</span>
+<ul class="example-list"><li>filosofía, filología</li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true"><span class="node level-2">Sistemas de orden (económico)</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-3">Impuestos y tasas</span>
+<ul class="example-list"><li>impuesto de sociedades, IVA</li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true">
+<span class="node level-1">Situaciones dinámicas</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-2">General</span>
+<ul class="example-list"><li>marea, luz</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-2">Humanas volitivas o intencionales</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-3">General</span>
+<ul class="example-list"><li>atraco, deseo</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Médico</span>
+<ul class="example-list"><li>operación, trasplante</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Violencia</span>
+<ul class="example-list"><li>disparos, ataque</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Formación</span>
+<ul class="example-list"><li>investigación, entrenamiento</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Tiempo libre</span>
+<ul class="example-list"><li>excursión, luna de miel</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Trabajo</span>
+<ul class="example-list"><li>teletrabajo, negocios</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Cognitivo o intelectual</span>
+<ul class="example-list"><li>reflexión, razonamiento</li></ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true"><span class="node level-2">Cambio</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-3">Motricidad</span>
+<ul class="example-list"><li>golpe, resbalón</li></ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true"><span class="node level-2">Natural</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-3">General</span>
+<ul class="example-list"><li>terremoto, erosión</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Biológico</span>
+<ul class="example-list"><li>simbiosis, respiración</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Químico</span>
+<ul class="example-list"><li>quemadura, digestión química</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Combustión</span>
+<ul class="example-list"><li>incendio, erupción</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Meteorológico</span>
+<ul class="example-list"><li>lluvia, rayo</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Patológico</span>
+<ul class="example-list"><li>infarto, ataque</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Floración</span>
+<ul class="example-list"><li>deshoje, florecimiento</li></ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true"><span class="node level-2">Acontecimientos</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-3">General</span>
+<ul class="example-list"><li>acontecimiento, suceso</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Origen</span>
+<ul class="example-list"><li>causa, motivo</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Resultado</span>
+<ul class="example-list"><li>crisis climática, desenlace</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Contratiempo</span>
+<ul class="example-list"><li>accidente, retraso</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Encuentro</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-4">Reunión</span>
+<ul class="example-list"><li>conferencia, congreso</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Ceremonia</span>
+<ul class="example-list"><li>boda, bautizo</li></ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Efectivo</span>
+<ul class="example-list"><li>nacimiento, muerte</li></ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true"><span class="node level-2">Actividades y acciones</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-3">General</span>
+<ul class="example-list"><li>migración, exportación</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Cambio</span>
+<ul class="example-list"><li>modernización, desarrollo</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Económicas</span>
+<ul class="example-list"><li>adquisición, despido</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Intencionales</span>
+<ul class="example-list"><li>investigación, prohibición</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Educativas</span>
+<ul class="example-list"><li>examen, evaluación</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Deportivas</span>
+<ul class="example-list"><li>baloncesto, fútbol</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Sociales</span>
+<ul class="example-list"><li>activismo climático, crowdfunding</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Empresariales</span>
+<ul class="example-list"><li>ganadería, turismo</li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true">
+<span class="node level-1">Situaciones estáticas</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-2">Atributos y Cualidades</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-3">General</span>
+<ul class="example-list"><li>color, anchura</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Identidad</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-4">Género</span>
+<ul class="example-list"><li>no binario, transgénero</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Orientación sexual</span>
+<ul class="example-list"><li>heterosexual, homosexual</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Diversidad funcional</span>
+<ul class="example-list"><li>persona ciega, persona con movilidad reducida</li></ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Atributos sensoriales</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-4">Olfato</span>
+<ul class="example-list"><li>aroma, olor</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Gusto</span>
+<ul class="example-list"><li>dulce, salado</li></ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Planta</span>
+<ul class="example-list"><li>floral, cítrico</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Finalidad</span>
+<ul class="example-list"><li>objetivo, meta</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Intelectual</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-4">General</span>
+<ul class="example-list"><li>inteligencia, creatividad</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Contenido</span>
+<ul class="example-list"><li>conceptualización</li></ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Magnitud</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-4">General</span>
+<ul class="example-list"><li>ancho, largo</li></ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Cantidad</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-4">General</span>
+<ul class="example-list"><li>sueldo, honorarios</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Relacional</span>
+<ul class="example-list"><li>frecuencia, proporción</li></ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Temperatura</span>
+<ul class="example-list"><li>calor, frio</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Color</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-4">General</span>
+<ul class="example-list"><li>rojo, teja</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Fruta</span>
+<ul class="example-list"><li>limón, cereza</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Madera</span>
+<ul class="example-list"><li>caoba, castaño</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Minerales y metales</span>
+<ul class="example-list"><li>cobre, plata</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Orgánico</span>
+<ul class="example-list"><li>cuero, marfil</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Piedras ornamentales</span>
+<ul class="example-list"><li>mármol, esmeralda</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Artificial</span>
+<ul class="example-list"><li>cristal, PVC</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Cerámico</span>
+<ul class="example-list"><li>terracota, arcilla</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Líquido</span>
+<ul class="example-list"><li>café, vino</li></ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Evaluación subjetiva</span>
+<ul class="example-list"><li>problema, suerte</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Normativo</span>
+<ul class="example-list"><li>inconstitucionalidad, Coercibilidad</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Posicionamiento cognitivo o intelectual</span>
+<ul class="example-list"><li>punto de vista, perspectiva</li></ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true"><span class="node level-2">Estado emocional</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-3">General</span>
+<ul class="example-list"><li>sentimiento, emoción</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Positivo</span>
+<ul class="example-list"><li>entusiasmo, alegría</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Negativo</span>
+<ul class="example-list"><li>tristeza, melancolía</li></ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true"><span class="node level-2">Estado físico</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-3">General</span>
+<ul class="example-list"><li>condición, salud</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Positivo</span>
+<ul class="example-list"><li>agilidad, flexibilidad</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Negativo</span>
+<ul class="example-list"><li>cansancio, enfermedad</li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true">
+<span class="node level-1">Lugar</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-2">General</span>
+<ul class="example-list"><li>playa, bosque</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-2">Paisaje</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-3">General</span>
+<ul class="example-list"><li>desierto, montaña</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Nombre propio</span>
+<ul class="example-list"><li>Everest, Moncayo</li></ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true"><span class="node level-2">Acuático</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-3">General</span>
+<ul class="example-list"><li>mar, río</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Nombre propio</span>
+<ul class="example-list"><li>Mediterráneo, Nilo</li></ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true"><span class="node level-2">Construcción</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-3">General</span>
+<ul class="example-list"><li>aeropuerto, parque</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Habitación</span>
+<ul class="example-list"><li>sótano, cocina</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Parte</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-4">General</span>
+<ul class="example-list"><li>ventana, tejado</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Material</span>
+<ul class="example-list"><li>baldosa, teja</li></ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Tipo</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-4">General</span>
+<ul class="example-list"><li>catedral, vivienda</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Médico</span>
+<ul class="example-list"><li>hospital, sanatorio</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Jurisprudencia</span>
+<ul class="example-list"><li>cárcel, tribunal</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Empresarial</span>
+<ul class="example-list"><li>empresa, editorial</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Domicilio</span>
+<ul class="example-list"><li>vivienda, adosado</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Educación</span>
+<ul class="example-list"><li>escuela, instituto</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Desplazamiento</span>
+<ul class="example-list"><li>albergue, parador</li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true"><span class="node level-2">Población</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-3">General</span>
+<ul class="example-list"><li>capital, pueblo</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Urbanismo</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-4">Vía</span>
+<ul class="example-list"><li>carretera, calle</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Puente</span>
+<ul class="example-list"><li>pasarela, puente elevadizo</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-4">Canal</span>
+<ul class="example-list"><li>canal, túnel</li></ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Ciudad (nombre propio)</span>
+<ul class="example-list"><li>Roma, Madrid</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">País (nombre propio)</span>
+<ul class="example-list"><li>Chile, Grecia</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Continente (nombre propio)</span>
+<ul class="example-list"><li>Europa, Asia</li></ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true"><span class="node level-2">Territorio</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-3">General</span>
+<ul class="example-list"><li>aldea, estado</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Isla</span>
+<ul class="example-list"><li>Cíes, Azores</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Área</span>
+<ul class="example-list"><li>zona, campo</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Parte</span>
+<ul class="example-list"><li>centro, frente</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Nombre propio</span>
+<ul class="example-list"><li>Toscana, Bretaña</li></ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true"><span class="node level-2">Locomoción</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-3">General</span>
+<ul class="example-list"><li>tanque, avión</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Terrestre</span>
+<ul class="example-list"><li>moto, camión</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Acuático</span>
+<ul class="example-list"><li>submarino, barca</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Aéreo</span>
+<ul class="example-list"><li>cazas, bombarderos</li></ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true"><span class="node level-2">Punto cardinal</span>
+<ul class="example-list"><li>Norte, Sur</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-2">Virtual (infraestructura)</span>
+<ul class="example-list"><li>servidor web, plataforma educativa</li></ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true">
+<span class="node level-1">Unidades</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-2">General</span>
+<ul class="example-list"><li>euro, Terabyte</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-2">Tiempo</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-3">General</span>
+<ul class="example-list"><li>días, semanas</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Período</span>
+<ul class="example-list"><li>Edad Media, Pleistoceno</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Semana</span>
+<ul class="example-list"><li>lunes, viernes</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Día</span>
+<ul class="example-list"><li>mañana, noche</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Mes</span>
+<ul class="example-list"><li>marzo, julio</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Años</span>
+<ul class="example-list"><li>los 80, los 90</li></ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true"><span class="node level-2">Cantidad</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-3">General</span>
+<ul class="example-list"><li>montón, tonelada</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Número</span>
+<ul class="example-list"><li>dos, cuatro</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Porcentaje</span>
+<ul class="example-list"><li>20%, 90%</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Relacional</span>
+<ul class="example-list"><li>mitad, resto</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Numérica</span>
+<ul class="example-list"><li>millón, trillón</li></ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true"><span class="node level-2">Monetaria</span>
+<ul class="example-list"><li>euro, dólar</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-2">Medida</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-3">Espacio (lineal)</span>
+<ul class="branch">
+<li data-toggle="true"><span class="node level-4">Objetivo</span>
+<ul class="example-list"><li>centímetros, milímetros</li></ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true"><span class="node level-3">Espacio (superficie)</span>
+<ul class="example-list"><li>kilómetros, yardas</li></ul>
+</li>
+</ul>
+</li>
+<li data-toggle="true"><span class="node level-2">Información digital</span>
+<ul class="example-list"><li>Megabyte, Gigabyte</li></ul>
+</li>
+<li data-toggle="true"><span class="node level-2">Potencia</span>
+<ul class="example-list"><li>vatio, kilovatio</li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const nodes = document.querySelectorAll('[data-toggle="true"] > .node');
+
+            nodes.forEach(node => {
+                node.addEventListener('click', function() {
+                    const parentLi = this.parentElement;
+                    const childBranch = parentLi.querySelector(':scope > .branch');
+                    const exampleList = parentLi.querySelector(':scope > .example-list');
+                    
+                    if (childBranch) {
+                        childBranch.classList.toggle('active');
+                    }
+                    if (exampleList) {
+                        exampleList.classList.toggle('active');
+                    }
+                });
+            });
+
+            // Expand first level branches by default
+            document.querySelectorAll('#mindmap-root > li > .branch').forEach(branch => {
+                branch.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
